@@ -1,0 +1,25 @@
+.wrap {
+    margin: 0 auto;
+    width: 100%;
+    max-width: $container;
+
+    @include media(0, $mediaMD) {
+        max-width: 100%;
+    }
+
+    @include mediaXXS {
+
+    }
+
+    @include mediaXS {
+
+    }
+
+    @include mediaSM {
+
+    }
+
+    @include mediaMD {
+
+    }
+}

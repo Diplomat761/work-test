@@ -1,0 +1,54 @@
+.ui-accordion {
+    $self: &;
+    position: relative;
+
+    &__head {
+        cursor: pointer;
+    }
+
+    &__title {
+        transition: color $transition;
+    }
+
+    &__head:hover &__title {
+        @include media($mediaMD, $mediaMAX) {
+
+        }
+    }
+
+    &__icon {
+        position: absolute;
+        top: 0;
+        right: 0;
+        transition: transform $transition, color $transition;
+
+        #{ $self }--active & {
+            transform: rotate(180deg);
+        }
+    }
+
+    &__head:hover &__icon {
+        @include media($mediaMD, $mediaMAX) {
+
+        }
+    }
+
+    &__content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s cubic-bezier(0, 1, 0, 1);
+
+        #{ $self }--active > & {
+            max-height: 2000px;
+            transition: max-height 1s ease-in;
+        }
+
+        #{ $self }--overflow-visible & {
+            overflow: visible;
+        }
+    }
+
+    &__inner {
+
+    }
+}

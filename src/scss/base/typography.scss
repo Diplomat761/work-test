@@ -1,0 +1,31 @@
+@mixin h1 {
+    font-weight: 700;
+    font-size: 94px;
+  
+
+}
+
+@mixin h2 {
+    font-weight: 400;
+    font-size: 48px;
+    font-style: italic;
+}
+
+@mixin h3 {
+    font-weight: 400;
+    font-size: 42px;
+}
+
+@mixin h4 {
+
+}
+
+@mixin h5 {
+
+}
+
+@mixin p {
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 130%;
+}

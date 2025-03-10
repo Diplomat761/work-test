@@ -1,0 +1,166 @@
+
+  .services-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 80px;
+    margin: 0 93px;
+    @media (max-width:1440px) {
+      flex-direction: column;
+
+    }
+    @media (max-width:500px) {
+      margin: 20px;
+    }
+  
+   
+    @media (max-width:500px) {
+      gap: 20px;
+      flex-direction: column;
+
+    }
+  }
+  
+
+  
+  #services .services-slider {
+    height: 52rem;
+    padding: 2rem 0;
+    position: relative;
+  }
+  
+  @media (max-width:500px) {
+    #services .services-slider {
+      height: 45rem;
+    }
+  }
+
+  .services-list {
+    max-width: 95%;
+  }
+
+  .services-item {
+    font-size: 22px;
+    list-style-type: none;
+    margin-bottom: 24px;
+    @media (max-width:500px) {
+      font-size: 14px;
+      margin-bottom: 12px;
+    }
+  }
+
+
+  .services-slide {
+    width: 552px;
+    height: 684px;
+    background: #19191B; 
+
+
+    &-content {
+      h3{
+        margin: 0;
+      }
+      
+      &-head {
+        display: flex;
+        gap: 155px;
+        margin-top: 40px;
+        transition: gap 0.3s ease; 
+        @media (max-width:500px) {
+          gap: 0;
+        }
+
+          &-text {
+            margin-left: 41px;
+            min-width: 130px;
+            h3 {
+              @media (max-width:500px) {
+                gap: 0;
+              font-size: 32px;}
+            }
+            p {
+              @media (max-width:500px) {
+                margin-top: 5px;
+                font-size: 18px;
+              }
+            }
+          }
+          &-link {
+      
+            margin-right: 10px;
+            @media (max-width:500px) {
+            margin-left: 52px;
+            }
+          }
+      }
+
+      &-body {
+        margin-top: 130px;
+        @media (max-width:500px) {
+          margin-top: 45px;
+        }
+      }
+    }
+
+  }
+
+    .services-slide-content-head{
+      &:hover {
+      gap: 140px;
+    }
+    }
+
+  @media (max-width:500px) {
+    .services-slide {
+      width: 22rem !important;
+      height: 30rem !important;
+    }
+
+
+  }
+  
+  .services-slide .services-slide-img img {
+    width: 37rem;
+    height: 42rem;
+    border-radius: 2rem;
+    object-fit: cover;
+  }
+  
+  .swiper-slide {
+    transition: background 0.5s ease;
+  }
+  
+  .swiper-slide-active {
+    background: $cBlack; 
+    border-top: 2px solid #0B68F0; 
+    border-bottom: 2px solid #0B68F0; 
+    box-sizing: border-box; 
+    .marker {
+      visibility: visible;
+    }
+    .marker-link {
+      visibility: visible;
+    }
+
+  }
+  
+
+  .services-slide .services-slide-content {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+
+  }
+  
+
+  
+  
+  
+
+ 
+  
+ 
+ 
+  

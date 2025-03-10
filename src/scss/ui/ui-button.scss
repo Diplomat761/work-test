@@ -1,0 +1,28 @@
+.ui-button {
+    $self: &;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color $transition, color $transition, border-color $transition, opacity $transition;
+
+    @include mediaSM {
+        padding: 16px 24px;
+    }
+
+    &:not(:disabled) {
+        @include hover {
+
+        }
+    }
+
+    &:disabled {
+        cursor: not-allowed;
+    }
+
+    svg {
+
+    }
+}

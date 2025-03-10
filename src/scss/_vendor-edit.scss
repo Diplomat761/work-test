@@ -1,0 +1,28 @@
+.swiper-pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &-bullet {
+
+        &-active {
+
+        }
+    }
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+
+    &::after {
+        display: none;
+    }
+}
+
+.swiper-button-prev {
+
+}
+
+.swiper-button-next {
+
+}

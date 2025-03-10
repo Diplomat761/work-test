@@ -1,0 +1,91 @@
+//  на -xs максимальное количество колонок 8, на -xxs - 6
+
+$sizes: (
+    ('-xxs', $mediaXXS, $mediaXS, 8px, 0, 6),
+    ('-xs', $mediaXS, $mediaSM, 4px, 0, 8),
+    ('-sm', $mediaSM, $mediaMD, 10px, 0, 12),
+    ('-md', $mediaMD, $mediaLG, 10px, 0, 12),
+    ('-lg', $mediaLG, $mediaXL, 10px, 0, 12),
+    ('-xl', $mediaXL, $mediaXL, 10px, 0, 10),
+    ('-xxl', $mediaXL, $mediaMAX, 10px, 0, 10),
+);
+
+.grid {
+    &-row {
+        display: flex;
+        flex-wrap: wrap;
+
+        @each $size in $sizes {
+            $from: nth($size, 2);
+            $to: nth($size, 3);
+            $columnPadding: nth($size, 4);
+
+            @include media($from, $to) {
+                margin-right: -#{$columnPadding};
+                margin-left: -#{$columnPadding};
+            }
+        }
+    }
+
+    &-col {
+        @each $size in $sizes {
+            $from: nth($size, 2);
+            $to: nth($size, 3);
+            $columnPadding: nth($size, 4);
+            $marginBottom: nth($size, 5);
+            $columnsCount: nth($size, 6);
+
+            @include media($from, $to) {
+                @for $i from 1 to 13 {
+                    &-#{$i} {
+                        width: calc(100% * #{$i} / #{$columnsCount});
+                        margin-bottom: #{$marginBottom};
+                        padding: 0 #{$columnPadding};
+                    }
+                }
+            }
+        }
+
+        @each $size in $sizes {
+            $postfix: nth($size, 1);
+            $from: nth($size, 2);
+            $to: nth($size, 3);
+            $columnPadding: nth($size, 4);
+            $marginBottom: nth($size, 5);
+            $columnsCount: nth($size, 6);
+
+            @include media($from, $to) {
+                @for $i from 1 to 13 {
+                    &-#{$i}-#{$postfix} {
+                        width: calc(100% * #{$i} / #{$columnsCount});
+                        margin-bottom: #{$marginBottom};
+                        padding: 0 #{$columnPadding};
+                    }
+                }
+            }
+        }
+    }
+
+    &-offset {
+        @for $i from 0 to 13 {
+            &-#{$i} {
+                margin-left: calc(100% * #{$i} / 12);
+            }
+        }
+
+        @each $size in $sizes {
+            $postfix: nth($size, 1);
+            $from: nth($size, 2);
+            $to: nth($size, 3);
+            $columnsCount: nth($size, 6);
+
+            @include media($from, $to) {
+                @for $i from 0 to 13 {
+                    &-#{$i}-#{$postfix} {
+                        margin-left: calc(100% * #{$i} / #{$columnsCount});
+                    }
+                }
+            }
+        }
+    }
+}

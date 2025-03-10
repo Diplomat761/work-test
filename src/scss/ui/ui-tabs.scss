@@ -1,0 +1,38 @@
+.ui-tabs {
+    &__buttons {
+        display: flex;
+        align-items: center;
+        width: fit-content;
+        margin-bottom: 20px;
+        border-radius: 12px;
+    }
+
+    &-button {
+        padding: 10px 16px;
+        border-radius: 12px;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 22px;
+
+        transition: background-color $transition, color $transition;
+        cursor: pointer;
+
+        &:not(&--active) {
+            @include hover {
+
+            }
+        }
+
+        &--active {
+
+        }
+    }
+
+    &-content {
+        display: none;
+
+        &--active {
+            display: block;
+        }
+    }
+}

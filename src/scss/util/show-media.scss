@@ -1,0 +1,23 @@
+.hidden-mobile {
+    @include media(0, $mediaSM) {
+        display: none !important;
+    }
+}
+
+.hidden-tablet {
+    @include mediaSM {
+        display: none !important;
+    }
+}
+
+.hidden-desktop {
+    @include media($mediaSM, $mediaMAX) {
+        display: none !important;
+    }
+}
+
+.show-xs {
+    @include media($mediaSM, $mediaMAX) {
+        display: none !important;
+    }
+}

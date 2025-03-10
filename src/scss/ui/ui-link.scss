@@ -1,0 +1,9 @@
+.ui-link {
+    text-decoration: none;
+    transition: color $transition;
+    cursor: pointer;
+
+    @include hover {
+
+    }
+}

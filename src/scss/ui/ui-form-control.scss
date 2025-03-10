@@ -1,0 +1,16 @@
+.ui-form-control {
+    position: relative;
+    transition: opacity $transition;
+
+    &__hint {
+
+    }
+
+    &__error {
+
+    }
+
+    &--disabled {
+
+    }
+}

@@ -1,0 +1,53 @@
+.movement {
+    display: flex;
+    overflow-x: hidden;
+}
+
+.movement .track {
+   
+      white-space: nowrap;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 30px;
+      padding-right: 40px;
+      @media (min-width:2300px) {
+        padding-right: 800px;
+        min-width: 200%; 
+        gap: 50px; 
+        }
+}
+
+
+
+
+.div1 {
+        animation: marquee1 20s infinite linear;
+        animation-delay: -20s;
+    }
+
+    .div2 {
+        animation: marquee2 20s infinite linear;
+        animation-delay: -10s;
+    }
+  
+
+
+@keyframes marquee1 {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes marquee2 {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-200%);
+    }
+}
+

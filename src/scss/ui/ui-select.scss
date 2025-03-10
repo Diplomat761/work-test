@@ -1,0 +1,121 @@
+.ui-select {
+    $self: &;
+    position: relative;
+
+    &__control {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0;
+        opacity: 0;
+    }
+
+    &__preview {
+        width: 100%;
+        height: 52px;
+        padding: 19px 45px 5px 15px;
+        border-radius: 8px;
+        background: $cWhite;
+        font-family: $fontPrimary;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        transition: border-color $transition;
+        cursor: pointer;
+    }
+
+    &__arrow {
+        position: absolute;
+        top: 12px;
+        right: 15px;
+        width: 24px;
+        height: 25px;
+        background: url('../img/icons/chevron-down.svg') center no-repeat;
+        background-size: contain;
+        transition: transform $transition;
+        pointer-events: none;
+
+        #{ $self }--opened & {
+            transform: rotate(180deg);
+        }
+    }
+
+    &__placeholder {
+        position: absolute;
+        top: 15px;
+        left: 16px;
+        transform-origin: left;
+        transition: $transition;
+
+        #{ $self }--selected & {
+            top: 2px;
+            font-size: 12px;
+            line-height: 16px;
+        }
+    }
+
+    &__text {
+        position: relative;
+        display: none;
+
+        #{ $self }--selected & {
+            display: block;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+    }
+
+    &__options {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        z-index: 10;
+        display: none;
+        width: 100%;
+        max-height: 150px;
+        margin-top: 4px;
+        overflow: auto;
+
+        &::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        &::-webkit-scrollbar-track {
+            background: none;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            width: inherit;
+            border-radius: 20px;
+        }
+
+        #{ $self }--opened & {
+            display: block;
+        }
+    }
+
+    &-option {
+        position: relative;
+        padding: 6px 30px;
+        background: $cWhite;
+        transition: background-color $transition;
+        cursor: pointer;
+
+        @include hover {
+
+        }
+
+        &--selected {
+            &::before {
+                position: absolute;
+                top: 7px;
+                left: 6px;
+                width: 16px;
+                height: 16px;
+                background: url('../img/icons/check.svg') center no-repeat;
+                background-size: contain;
+                content: '';
+            }
+        }
+    }
+}

@@ -1,0 +1,28 @@
+// --
+// fonts
+// ==
+
+/**
+ * Get font from path
+ * '../fonts/$fontFolderName/$fontWeight.woff'
+ * '../fonts/$fontFolderName/$fontWeight.woff2'
+ * example @include font('Open Sans', 'OpenSans' 400); подключит '../fonts/OpenSans/400.woff'
+ */
+@mixin font($fontFamily: '', $fontFolderName: '', $fontWeight: 400, $fontStyle: normal, $fontDisplay: swap) {
+    @font-face {
+        font-family: $fontFamily;
+         src:
+        //   url('../fonts/#{$fontFolderName}/#{$fontWeight}.woff2') format('woff2'),
+        // url('../fonts/#{$fontFolderName}/#{$fontWeight}.woff') format('woff'),
+        url('../fonts/#{$fontFolderName}/#{$fontWeight}.ttf') format('truetype');
+        font-style: $fontStyle;
+        font-weight: $fontWeight;
+        font-display: $fontDisplay;
+    }
+}
+
+@include font('Montserrat', 'Montserrat', 400);
+@include font('Montserrat', 'Montserrat', 700);
+
+//@include font('Open Sans', 'open-sans', 400); // example include font 'src/fonts/open-sans/400.woff'
+/* stylelint-enable */
