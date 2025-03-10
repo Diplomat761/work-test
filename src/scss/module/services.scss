@@ -106,7 +106,9 @@
 
     .services-slide-content-head{
       &:hover {
-      gap: 140px;
+      @media (min-width:500px) {
+        gap: 140px;
+      }
     }
     }
 
